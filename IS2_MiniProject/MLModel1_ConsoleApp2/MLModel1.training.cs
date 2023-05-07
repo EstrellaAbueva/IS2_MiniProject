@@ -8,7 +8,7 @@ using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
 using Microsoft.ML;
 
-namespace IS2_MiniProject
+namespace MLModel1_ConsoleApp2
 {
     public partial class MLModel1
     {
