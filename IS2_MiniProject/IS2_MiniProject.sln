@@ -5,9 +5,9 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IS2_MiniProject", "IS2_MiniProject\IS2_MiniProject.csproj", "{191BB839-3505-45EF-801F-C8A34D82D9B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLModel1_ConsoleApp2", "MLModel1_ConsoleApp2\MLModel1_ConsoleApp2.csproj", "{76673E01-737E-4C58-A491-17C3B0ACA100}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentAnalysis", "MLModel1_ConsoleApp2\SentimentAnalysis.csproj", "{76673E01-737E-4C58-A491-17C3B0ACA100}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLModel2_ConsoleApp1", "MLModel2_ConsoleApp1\MLModel2_ConsoleApp1.csproj", "{F1DD4689-8D92-4626-B1CD-6CD4166F9390}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentAnalysisNLP", "MLModel2_ConsoleApp1\SentimentAnalysisNLP.csproj", "{F1DD4689-8D92-4626-B1CD-6CD4166F9390}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
