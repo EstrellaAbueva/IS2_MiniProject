@@ -91,11 +91,9 @@ namespace IS2_MiniProject
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName: "col1", inputColumnName: "col1", addKeyValueAnnotationsAsText: false)
-                .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName: "col0", outputColumnName: "Features"))
-                .Append(mlContext.Transforms.Text.ExtractNgrams("Features", "Features", ngramLength: 3)) // Extract trigrams
-                .Append(mlContext.Transforms.NormalizeMinMax("Features", "Features"))
-                .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName: "PredictedLabel", inputColumnName: "PredictedLabel"));
+            var pipeline = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"col1",inputColumnName:@"col1",addKeyValueAnnotationsAsText:false)      
+                                    .Append(mlContext.MulticlassClassification.Trainers.TextClassification(labelColumnName: @"col1", sentence1ColumnName: @"col0"))      
+                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
 
             return pipeline;
         }
