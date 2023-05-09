@@ -15,7 +15,11 @@ MLModel2.ModelInput sampleData = new MLModel2.ModelInput()
     Col0 = @input,
 };
 
+//var predictionResult = MLModel2.Predict(sampleData);
+//Console.WriteLine($"\n\nPredicted Emotion: {predictionResult.PredictedLabel}\n\n");
+
 var sortedScoresWithLabel = MLModel2.PredictAllLabels(sampleData);
+
 Console.WriteLine($"{"Emotion",-40}{"Score",-20}");
 Console.WriteLine($"{"-----",-40}{"-----",-20}");
 
