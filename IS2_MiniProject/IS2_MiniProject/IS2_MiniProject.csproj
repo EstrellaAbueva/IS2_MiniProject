@@ -134,31 +134,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="MLModel1.mbconfig" />
-    <None Include="MLModel2.mbconfig" />
+    <None Include="MLModel3.mbconfig" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup Label="MLModel1">
-    <None Include="MLModel1.consumption.cs">
-      <DependentUpon>MLModel1.mbconfig</DependentUpon>
-    </None>
-    <None Include="MLModel1.training.cs">
-      <DependentUpon>MLModel1.mbconfig</DependentUpon>
-    </None>
-    <None Include="MLModel1.zip">
-      <DependentUpon>MLModel1.mbconfig</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup Label="MLModel2">
-    <Compile Include="MLModel2.consumption.cs">
-      <DependentUpon>MLModel2.mbconfig</DependentUpon>
+  <ItemGroup Label="MLModel3">
+    <Compile Include="MLModel3.consumption.cs">
+      <DependentUpon>MLModel3.mbconfig</DependentUpon>
     </Compile>
-    <Compile Include="MLModel2.training.cs">
-      <DependentUpon>MLModel2.mbconfig</DependentUpon>
+    <Compile Include="MLModel3.training.cs">
+      <DependentUpon>MLModel3.mbconfig</DependentUpon>
     </Compile>
-    <None Include="MLModel2.mlnet">
-      <DependentUpon>MLModel2.mbconfig</DependentUpon>
+    <None Include="MLModel3.mlnet">
+      <DependentUpon>MLModel3.mbconfig</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
