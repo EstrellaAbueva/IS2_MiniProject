@@ -7,6 +7,16 @@
   pointer-events: none;
 }
 
+body {
+  display: flex;
+  background-color: bisque;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
