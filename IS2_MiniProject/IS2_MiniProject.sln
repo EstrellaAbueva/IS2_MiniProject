@@ -5,8 +5,6 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IS2_MiniProject", "IS2_MiniProject\IS2_MiniProject.csproj", "{191BB839-3505-45EF-801F-C8A34D82D9B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentAnalysisNLP", "SentimentAnalysisNLP\SentimentAnalysisNLP.csproj", "{86C7CE73-B04B-46AA-97DC-36CD255E4351}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{191BB839-3505-45EF-801F-C8A34D82D9B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{191BB839-3505-45EF-801F-C8A34D82D9B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{191BB839-3505-45EF-801F-C8A34D82D9B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86C7CE73-B04B-46AA-97DC-36CD255E4351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86C7CE73-B04B-46AA-97DC-36CD255E4351}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86C7CE73-B04B-46AA-97DC-36CD255E4351}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86C7CE73-B04B-46AA-97DC-36CD255E4351}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
