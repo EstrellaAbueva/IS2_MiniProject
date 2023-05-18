@@ -119,3 +119,12 @@
     align-items: center;
     justify-content: center;
 }
+
+::-webkit-scrollbar {
+  width: 0.5em; /* Adjust the width as needed */
+  background-color: transparent; /* Set the background color to match the container */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Set the thumb color to transparent to hide it */
+}
