@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import './FileText.css';
-import Remarks from '../Remarks/Remarks';
 import SelectGraph from '../SelectGraph/SelectGraph';
 import DisplayTable from '../DisplayTable/DisplayTable';
+import TextInput from '../TextInput/TextInput';
 
 const FileText = () => {
   const [fileData, setFileData] = useState([]);
@@ -50,7 +50,7 @@ const FileText = () => {
           <SelectGraph />
         </div>
         <div className="remarks-area">
-          <Remarks />
+          <TextInput label={"Remarks"} />
           <button className="pdf">Generate PDF</button>
         </div>
       </div>

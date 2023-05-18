@@ -1,12 +1,12 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
 
-function TextInput() {
+function TextInput({label}) {
   return (
     <>
         <TextField
           id="outlined-multiline-static"
-          label="Text to Analyze"
+          label={label}
           multiline
           fullWidth 
           rows={10}

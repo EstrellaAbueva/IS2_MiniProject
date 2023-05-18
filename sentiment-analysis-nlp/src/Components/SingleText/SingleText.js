@@ -6,7 +6,7 @@ export const SingleText = () => {
   return (
       <div className='main-container'>
       <div className='left-container'>
-        <TextInput />
+        <TextInput label={"Text to Analyze"}/>
         <br />
         <button className='analyze-button'>Analyze</button>
       </div>
