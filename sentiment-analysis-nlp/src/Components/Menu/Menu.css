@@ -1,0 +1,28 @@
+/*Menu CSS*/
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.text-block {
+    text-align: justify;
+    display: inline-block;
+    padding: 1%;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1%;
+}

@@ -1,11 +1,12 @@
 import React from 'react'
-import './index.css'
+import './SingleText.css'
+import TextInput from '../TextInput/TextInput'
 
 export const SingleText = () => {
   return (
-    <div className='container'>
+      <div className='main-container'>
       <div className='left-container'>
-        <input type="text" />
+        <TextInput />
         <br />
         <button className='analyze-button'>Analyze</button>
       </div>
