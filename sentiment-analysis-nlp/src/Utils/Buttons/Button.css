@@ -24,7 +24,7 @@
     padding: 0;
     border: none;
     background: rgb(255,27,0);
-  background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+    background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
   }
   .btn-5:hover {
     color: #f0094a;
@@ -48,7 +48,7 @@
   }
 
   .frame {
-    width: 90%;
+    width: 100%;
     margin-bottom: 10%;
     text-align: center;
   }
@@ -68,3 +68,11 @@
     width:100%;
     transition:800ms ease all;
   }
+
+  .button-box {
+    display: flex;
+    align-items: center;
+    align-self:baseline;
+    justify-content: flex-start;
+    flex-direction: row;
+}

@@ -3,28 +3,63 @@
 
 using SentimentAnalysisNLP;
 
+String text;
+
+
+Dictionary<string, string> labelMapping = new Dictionary<string, string>
+{
+    { "0", "emotion undefined" },
+    { "1", "joy" },
+    { "2", "love" },
+    { "3", "sadness" },
+    { "4", "anger" },
+    { "5", "fear" },
+    { "6", "surprise" }
+};
+
+Console.Write("Insert Text: ");
+text = Console.ReadLine()!;
+
 // Create single instance of sample data from first line of dataset for model input
 MLModel3.ModelInput sampleData = new MLModel3.ModelInput()
 {
-    Col0 = @"i feel like an idiotic herd mentality mindless follower when i m walking down the street with a large group of people",
+    Col0 = text
 };
 
 
 
-Console.WriteLine("Using model to make single prediction -- Comparing actual Col2 with predicted Col2 from sample data...\n\n");
+Console.WriteLine("\n\nUsing Text Classification Multi Model for determining emotion in text\n\n");
 
-
-Console.WriteLine($"Col0: {@"i feel like an idiotic herd mentality mindless follower when i m walking down the street with a large group of people"}");
-Console.WriteLine($"Col2: {3F}");
+Console.WriteLine($"Text: {text}");
+//Console.WriteLine($"Emotion: {labelMapping[3F.ToString()]}");
 
 
 var sortedScoresWithLabel = MLModel3.PredictAllLabels(sampleData);
 Console.WriteLine($"{"Class",-40}{"Score",-20}");
 Console.WriteLine($"{"-----",-40}{"-----",-20}");
 
+
 foreach (var score in sortedScoresWithLabel)
 {
-    Console.WriteLine($"{score.Key,-40}{score.Value,-20}");
+    string label = labelMapping.ContainsKey(score.Key) ? labelMapping[score.Key] : "Unknown";
+
+    Console.WriteLine($"{label,-40}{score.Value,-20}");
+}
+
+Console.WriteLine("\n\nApply Normalization using MinMaxScaler\n");
+
+// Find the minimum and maximum scores
+var minScore = sortedScoresWithLabel.Min(s => s.Value);
+var maxScore = sortedScoresWithLabel.Max(s => s.Value);
+
+foreach (var score in sortedScoresWithLabel)
+{
+    // Normalize the score between 0 and 1
+    var normalizedScore = (score.Value - minScore) / (maxScore - minScore);
+
+    string label = labelMapping.ContainsKey(score.Key) ? labelMapping[score.Key] : "Unknown";
+
+    Console.WriteLine($"{label,-40}{normalizedScore,-20}");
 }
 
 Console.WriteLine("=============== End of process, hit any key to finish ===============");
