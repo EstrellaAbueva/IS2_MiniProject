@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './FileText.css';
-import SelectGraph from '../SelectGraph/SelectGraph';
 import DisplayTable from '../DisplayTable/DisplayTable';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import BarGraph from '../SelectGraph/BarGraph';
+import BarGraph from '../Graphs/BarGraph';
 import axios from 'axios';
 
 const FileText = () => {
@@ -25,18 +24,18 @@ const FileText = () => {
 
   useEffect(() => {
     let count = 0;
-  
+
     if (clicked) {
       setClicked(false);
       setShowGraph(false);
       setResults({ 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 }); // Reset results
-  
+
       fileData.forEach(row => {
         const requestData = {
           col0: row[0],
           col2: 0,
         };
-  
+
         axios
           .post('https://localhost:50952/predict', requestData)
           .then(response => {
@@ -45,7 +44,7 @@ const FileText = () => {
               updatedResults[response.data.predictedLabel] += 1;
               return updatedResults;
             });
-  
+
             count++;
             if (count === fileData.length) {
               console.log(results);
@@ -105,23 +104,31 @@ const FileText = () => {
           </button>
         </div>
       </div>
-      <div className="container">
-        <div className="graphs-area">
-        {showGraph ? (
-          <BarGraph data={results} />
-        ) : (
-          <span>Loading . . .</span>
-        )}
-        </div>
-        <div className="remarks-area">
-          <ReactQuill
-            value={remark}
-            onChange={handleChange}
-            style={{ width: '100%', height: '250px', backgroundColor: 'orange' }}
-          />
-        </div>
-        <button className="pdf">Generate PDF</button>
-      </div>
+      {showGraph && (
+        <>
+          <div className="container">
+            <div className="graphs-area">
+              <div className="remarks-title">Visualization</div>
+                <div className='graph'>
+                  <BarGraph data={results} />
+                </div>
+            </div>
+            <div className="right">
+              <div className="remarks-area">
+                <div className="remarks-title">Remarks</div>
+                  <ReactQuill
+                  value={remark}
+                  onChange={handleChange}
+                  style={{width: '450px',height: '145px', backgroundColor: 'red' }}
+                  />
+              </div>
+            </div>
+          </div>
+          <div className="footer">
+            <button className="pdf">Generate PDF</button>
+          </div>
+        </>
+      )}
     </>
   );
 };
