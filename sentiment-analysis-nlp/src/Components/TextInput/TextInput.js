@@ -1,5 +1,5 @@
 import React from 'react';
-import TextField from '@mui/material/TextField';
+import { TextField } from '@mui/material';
 
 function TextInput({ label, inputValue, handleInputChange }) {
   const handleTextFieldChange = (event) => {
@@ -15,6 +15,7 @@ function TextInput({ label, inputValue, handleInputChange }) {
       rows={10}
       value={inputValue}
       onChange={handleTextFieldChange}
+      sx={{ backgroundColor: '#ACB1D6' }} // Set the background color here
     />
   );
 }
