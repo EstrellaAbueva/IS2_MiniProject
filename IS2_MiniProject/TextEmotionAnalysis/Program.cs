@@ -16,12 +16,6 @@ builder.Services.AddPredictionEnginePool<MLModel3.ModelInput, MLModel3.ModelOutp
 
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Description = "Docs for my API", Version = "v1" });
-});
-var app = builder.Build();
-
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
@@ -32,8 +26,13 @@ builder.Services.AddCors(options =>
     });
 });
 
-app.UseCors();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Description = "Docs for my API", Version = "v1" });
+});
+var app = builder.Build();
 
+app.UseCors();
 app.UseSwagger();
 
 app.UseSwaggerUI(c =>
