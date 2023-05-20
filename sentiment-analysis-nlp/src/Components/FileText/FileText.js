@@ -1,18 +1,22 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './FileText.css';
-import SelectGraph from '../SelectGraph/SelectGraph';
 import DisplayTable from '../DisplayTable/DisplayTable';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import BarGraph from '../SelectGraph/BarGraph';
 import axios from 'axios';
+import { useReactToPrint } from 'react-to-print';
+import Modal from 'react-modal';
 
 const FileText = () => {
   const [fileData, setFileData] = useState([]);
   const fileInputRef = useRef(null);
-  const [remark, setRemark] = useState("");
+  const [remark, setRemark] = useState('');
+  const componentRef = useRef();
   const [clicked, setClicked] = useState(false);
   const [showGraph, setShowGraph] = useState(false);
+  const generatePDF = false;
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [results, setResults] = useState({
     0: 0,
     1: 0,
@@ -25,40 +29,39 @@ const FileText = () => {
 
   useEffect(() => {
     let count = 0;
-  
+
     if (clicked) {
       setClicked(false);
-      setShowGraph(false);
       setResults({ 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 }); // Reset results
-  
-      fileData.forEach(row => {
+
+      fileData.forEach((row) => {
         const requestData = {
           col0: row[0],
           col2: 0,
         };
-  
+
         axios
           .post('https://localhost:50952/predict', requestData)
-          .then(response => {
-            setResults(prevResults => {
+          .then((response) => {
+            setResults((prevResults) => {
               const updatedResults = { ...prevResults };
               updatedResults[response.data.predictedLabel] += 1;
               return updatedResults;
             });
-  
+
             count++;
             if (count === fileData.length) {
               console.log(results);
               setShowGraph(true);
             }
           })
-          .catch(error => {
+          .catch((error) => {
             console.error(error);
             count++;
           });
       });
     }
-  }, [clicked, fileData]);
+  }, [clicked]);
 
   const handleFileUpload = () => {
     const file = fileInputRef.current.files[0];
@@ -67,16 +70,76 @@ const FileText = () => {
     const reader = new FileReader();
     reader.onload = (e) => {
       const contents = e.target.result;
-      const rows = contents.split('\n').map(row => row.split(','));
+      const rows = contents.split('\n').map((row) => row.split(','));
       setFileData(rows);
     };
 
     reader.readAsText(file);
   };
 
-  const handleChange = value => {
+  const handleChange = (value) => {
     setRemark(value);
     console.log(remark);
+  };
+
+  const printHandle = useReactToPrint({
+    content: () => componentRef.current,
+    pageStyle: () => `
+      @page { size: letter; margin: 0.5in;}
+      @media print {
+        .print-break {
+          margin-top: 1rem;
+          display: block;
+          page-break-before: always;
+        }
+      }
+    `,
+  });
+
+  const handlePrint = () => {
+    if (showGraph) {
+      printHandle();
+    } else {
+      console.log('Component is not rendered yet or no graph data!');
+    }
+  };
+
+  const GeneratePDF = () => {
+    const barGraphRef = useRef();
+  
+    useEffect(() => {
+      if (barGraphRef.current) {
+        setTimeout(() => {
+          barGraphRef.current.updateDimensions();
+        }, 500);
+      }
+    }, []);
+
+  
+    return (
+      <div ref={componentRef}>
+            <div style={{width: "40%"}}>
+              {showGraph ? (
+                <BarGraph data={results} width={500} height={300} ref={barGraphRef} />
+              ) : (
+                <span>Loading . . .</span>
+              )}
+              <div className="remarks">
+                <span>
+                  <div dangerouslySetInnerHTML={{ __html: remark }}></div>
+                </span>
+              </div>
+      </div>
+      </div>
+    );
+  };
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+  
+  const closeModal = () => {
+    setModalIsOpen(false);
   };
 
   return (
@@ -107,11 +170,11 @@ const FileText = () => {
       </div>
       <div className="container">
         <div className="graphs-area">
-        {showGraph ? (
-          <BarGraph data={results} />
-        ) : (
-          <span>Loading . . .</span>
-        )}
+          {showGraph ? (
+            <BarGraph data={results} />
+          ) : (
+            <span>Loading . . .</span>
+          )}
         </div>
         <div className="remarks-area">
           <ReactQuill
@@ -120,8 +183,17 @@ const FileText = () => {
             style={{ width: '100%', height: '250px', backgroundColor: 'orange' }}
           />
         </div>
-        <button className="pdf">Generate PDF</button>
+        <button className="pdf" onClick={openModal}>
+          Show PDF
+        </button>
       </div>
+      <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
+          <GeneratePDF/>
+          <button className="pdf" onClick={handlePrint}> Generate PDF</button>
+          <button className="close-button" onClick={closeModal}>
+            Close
+          </button>
+      </Modal>
     </>
   );
 };
