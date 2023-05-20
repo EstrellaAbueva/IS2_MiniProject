@@ -1,3 +1,10 @@
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+body{
+    font-family: "Raleway", sans-serif;
+}
+
 .main-container{
     display: flex;
     flex-direction: row;
@@ -28,10 +35,11 @@
 .analyze-button{
     width: 100%;
     height: 50px;
-    background-color: #1E90FF;
+    background-color: #3b447a;
     color: white;
     border: none;
     border-radius: 5px;
+    font-family: "Raleway", sans-serif;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -40,16 +48,16 @@
 }
 
 .analyze-button:hover{
-    background-color: #3b6b9c;
+    background-color: #222b5f;
     color: white;
 }
 
-input{
-    width: 100%;
-    height: 250px;
-    border: 1px solid #1E90FF;
+.line {
+    margin-top: 1%;
+    width: 3px;
+    height: 350px;
+    background-color: #dce4e4;
     border-radius: 5px;
-    padding: 15px;
 }
 
 .sentiment-image{
@@ -74,40 +82,54 @@ input{
     background-image: url(../../Images/anger.png);
     background-size: cover;
     object-fit: contain;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px #d6d6d9;
 }
 
 .fear{
     background-image: url(../../Images/fear.png);
     background-size: cover;
     object-fit: contain;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px #d6d6d9;
 }
 
 .joy{
     background-image: url(../../Images/joy.png);
     background-size: cover;
     object-fit: contain;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px #d6d6d9;
 }
 
 .love{
     background-image: url(../../Images/love.png);
     background-size: cover;
     object-fit: contain;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px #d6d6d9;
 }
 
 .sadness{
     background-image: url(../../Images/sadness.png);
     background-size: cover;
     object-fit: contain;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px #d6d6d9;
 }
 
 .surprise{
     background-image: url(../../Images/surprise.png);
     background-size: cover;
     object-fit: contain;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px #d6d6d9;
 }
 
 .undefined{
     background-image: url(../../Images/undefined.png);
     background-size: cover;
     object-fit: contain;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px #d6d6d9;
 }

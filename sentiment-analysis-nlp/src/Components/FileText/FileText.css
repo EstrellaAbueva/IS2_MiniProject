@@ -1,93 +1,150 @@
 .whole-container{
-    width: 1000px;
+    width: 980px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    padding: 1%;
 }
 
 .import {
-    width: 300px;
+    width: 400px;
     height: 50px;
-    background-color: #1E90FF;
+    background-color: #c64667;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 20px;
-    font-weight: bold;
     cursor: pointer;
     text-align: center;
     display: flex;
     align-items: center;
+    font-weight: bold;
     justify-content: center;
 }  
 
 .analyze{
-    width: 300px;
+    width: 400px;
     height: 50px;
-    background-color: #1E90FF;
+    background-color: #3b447a;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .import:hover{
-    background-color: #3b6b9c;
+    background-color: #944363;
+    font-weight: bolder;
     color: white;
 }
 
 .analyze:hover{
-    background-color: #3b6b9c;
+    background-color: #222b5f;
+    font-weight: bolder;
     color: white;
 }
 
-.remarks{
-    width: 100%;
+.show{
+    width: 30%;
     height: 50px;
-    border: 1px solid #1E90FF;
-    border-radius: 5px;
-    padding: 11px;
-}
-
-.pdf{
-    width: 50%;
-    height: 20%;
-    background-color: #ff0000;
+    background-color: #e20a4a;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    padding: 2%;
+    padding: 1%;
+    align-content: center;
 }
 
-.pdf:hover{
-    background-color: #ff3333;
+.print{
+    width: 30%;
+    height: 50px;
+    background-color: #f73c6a;
     color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1%;
+    align-content: center;
+}
+
+.print:hover{
+    background-color: #e20a4a;
+}
+
+.close-button{
+    width: 30%;
+    height: 50px;
+    background-color: #464076;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1%;
+    align-content: center;
+}
+
+.close-button:hover{
+    background-color: #082369;
+}
+
+.remarks{
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .remarks-area{
-    width: 45%;
-    height: 200px;
+    width: 100%;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 3%;
+}
+
+.remarks-title {
+  width: 440px;
+  height: 30px;
+  padding: 1%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1%;
+}
+
+.remarks-content {
+    width: 500px;
+    text-align: justify;
+    word-wrap: break-word;
 }
 
 .graphs-area{
-    width: 45%;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 3%;
+    margin-top: 1%;
 }
 
 .buttons-area {
@@ -97,6 +154,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    padding: 1%;
 }  
 
 .table-parent{
@@ -105,19 +163,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1%;
+}
+
+.graph{
+    width: 440px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
 }
 
 #fileInput {
     display: none; /* Hide the file input element */
-  }
+}
 
 .no-data{
     width: 100%;
-    height: 300px;
+    height: 315px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 1%;
 }
 
 ::-webkit-scrollbar {
@@ -127,4 +197,47 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: transparent; /* Set the thumb color to transparent to hide it */
+}
+
+.right{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.footer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.divider {
+    margin-top: 1%;
+    width: 5px;
+    height: 400px;
+    background-color: #dce4e4;
+    border-radius: 5px;
+}
+
+.modal{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-base{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

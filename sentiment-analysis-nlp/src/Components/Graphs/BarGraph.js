@@ -22,7 +22,7 @@ const BarGraph = ({ data }) => {
         labels: ['Emotion Undefined', 'Joy', 'Love', 'Sadness', 'Anger', 'Fear', 'Surprise'],
         datasets: [
           {
-            label: '# of Votes',
+            label: 'Emotion Analysis Data',
             data: Object.values(data), // Use the values from the data object
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
             borderColor: 'rgba(54, 162, 235, 1)',
