@@ -3,7 +3,7 @@
   "DataSource": {
     "Type": "TabularFile",
     "Version": 1,
-    "FilePath": "C:\\SCHOOL\\COMPUTER SCIENCE\\3rd Year\\2nd Semester\\CS346 IS2 ALIAC\\Activities\\IS2_MiniProject\\archive\\randomized.csv",
+    "FilePath": "C:\\Users\\Ella\\Documents\\THIRD YEAR\\Second Sem\\CS346 - Intelligent Systems 2\\IS2_MiniProject\\archive\\randomized.csv",
     "Delimiter": ",",
     "DecimalMarker": ".",
     "HasHeader": false,
