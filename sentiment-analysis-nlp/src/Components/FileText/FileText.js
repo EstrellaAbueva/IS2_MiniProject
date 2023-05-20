@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import './FileText.css';
 import SelectGraph from '../SelectGraph/SelectGraph';
 import DisplayTable from '../DisplayTable/DisplayTable';
-import TextInput from '../TextInput/TextInput';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
