@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
+import BarGraph from './BarGraph';
 
 
 function SelectGraph() {
@@ -13,6 +14,7 @@ function SelectGraph() {
     };
 
   return (
+    <>
     <FormControl sx={{ m: 1, minWidth: 300 }} size="small">
         <InputLabel id="demo-select-small-label">Graph</InputLabel>
         <Select
@@ -27,6 +29,8 @@ function SelectGraph() {
             <MenuItem value={"line"}>Line</MenuItem>
         </Select>
     </FormControl>
+    <BarGraph/>
+    </>
   )
 }
 
