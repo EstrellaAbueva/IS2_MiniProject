@@ -1,26 +1,22 @@
-import React from 'react'
+import React from 'react';
 import TextField from '@mui/material/TextField';
 
-function TextInput({label, inputValue, handleInputChange}) {
-  
+function TextInput({ label, inputValue, handleInputChange }) {
   const handleTextFieldChange = (event) => {
-    const value = event.target.value;
-    handleInputChange(value);
+    handleInputChange(event.target.value);
   };
 
   return (
-    <>
-        <TextField
-          id="outlined-multiline-static"
-          label={label}
-          multiline
-          fullWidth 
-          rows={10}
-          value={inputValue}
-          onChange={handleTextFieldChange}
-        />
-    </>
-  )
+    <TextField
+      id="outlined-multiline-static"
+      label={label}
+      multiline
+      fullWidth
+      rows={10}
+      value={inputValue}
+      onChange={handleTextFieldChange}
+    />
+  );
 }
 
-export default TextInput
+export default TextInput;
