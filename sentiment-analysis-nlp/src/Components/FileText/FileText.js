@@ -3,10 +3,13 @@ import './FileText.css';
 import SelectGraph from '../SelectGraph/SelectGraph';
 import DisplayTable from '../DisplayTable/DisplayTable';
 import TextInput from '../TextInput/TextInput';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const FileText = () => {
   const [fileData, setFileData] = useState([]);
   const fileInputRef = useRef(null);
+  const [remark, setRemark] = useState("");
 
   const handleFileUpload = () => {
     const file = fileInputRef.current.files[0];
@@ -20,6 +23,11 @@ const FileText = () => {
 
     reader.readAsText(file);
   };
+
+  const handleChange = (value) => {
+    setRemark(value);
+    console.log(remark);
+  }
 
   return (
     <>
@@ -50,10 +58,11 @@ const FileText = () => {
           <SelectGraph />
         </div>
         <div className="remarks-area">
-          <TextInput label={"Remarks"} />
+        <ReactQuill value={remark} onChange={handleChange} style={{ width: "100%", height: "250px", backgroundColor: "orange" }} />
           <button className="pdf">Generate PDF</button>
         </div>
       </div>
+      
     </>
   );
 };
