@@ -8,8 +8,13 @@ export const SingleText = () => {
   const [clicked, setClicked] = useState(false);
   const [result, setResult] = useState();
 
+  const handleInputChange = (value) => {
+    setText(value);
+  };
+
   useEffect(() => {
     if (clicked) {
+      console.log(text);
       setClicked(false);
       axios
         .post('https://localhost:50952/predict', {
@@ -31,7 +36,7 @@ export const SingleText = () => {
   return (
       <div className='main-container'>
       <div className='left-container'>
-        <TextInput label={"Text to Analyze"} value={text} onChange={setText}/>
+        <TextInput label={"Text to Analyze"} inputValue={text} handleInputChange={handleInputChange}/>
         <br />
         <button className='analyze-button' onClick={() => setClicked(true)}> Analyze </button>
       </div>
