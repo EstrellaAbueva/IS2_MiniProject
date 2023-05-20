@@ -3,6 +3,7 @@
 
 .container{
   display: flex;
+  height: 450px;
   flex-direction: row;
 }
 
@@ -12,7 +13,9 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 3%;
+  padding-top: 1%;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
 .text-block {
@@ -23,7 +26,7 @@
 .menu-line {
   margin-top: 5%;
   width: 5px;
-  height: 450px;
+  height: 400px;
   background-color: #dce4e4;
   border-radius: 5px;
 }
