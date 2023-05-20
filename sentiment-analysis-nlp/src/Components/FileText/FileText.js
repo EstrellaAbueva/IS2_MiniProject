@@ -117,19 +117,17 @@ const FileText = () => {
 
   
     return (
-      <div ref={componentRef}>
-            <div style={{width: "40%"}}>
-              {showGraph ? (
-                <BarGraph data={results} width={500} height={300} ref={barGraphRef} />
-              ) : (
-                <span>Loading . . .</span>
-              )}
-              <div className="remarks">
-                <span>
-                  <div dangerouslySetInnerHTML={{ __html: remark }}></div>
-                </span>
-              </div>
-      </div>
+      <div ref={componentRef} className='modal-base'>
+        <div className='modal'>
+          {showGraph ? (
+            <BarGraph data={results} width={500} height={300} ref={barGraphRef} />
+          ) : (
+            <span>Loading . . .</span>
+          )}
+          <div className="remarks">
+            <div className="remarks-content" dangerouslySetInnerHTML={{ __html: remark }}></div>
+          </div>
+        </div>
       </div>
     );
   };
@@ -163,9 +161,9 @@ const FileText = () => {
             onChange={handleFileUpload}
             accept=".csv, .txt"
           />
-          <button className="analyze" onClick={() => setClicked(true)}>
+          <label className="analyze" onClick={() => setClicked(true)}>
             Analyze
-          </button>
+          </label>
         </div>
       </div>
       {showGraph && (
@@ -177,20 +175,28 @@ const FileText = () => {
                   <BarGraph data={results} />
                 </div>
             </div>
+            <div class="divider"></div>
             <div className="right">
               <div className="remarks-area">
                 <div className="remarks-title">Remarks</div>
                   <ReactQuill
                   value={remark}
                   onChange={handleChange}
-                  style={{width: '450px',height: '145px', backgroundColor: 'red' }}
+                  style={{width: '450px',height: '145px', backgroundColor: '#d9d9d9' }}
                   />
               </div>
             </div>
           </div>
           <div className="footer">
-            <button className="pdf">Generate PDF</button>
+            <button className="show" onClick={openModal}>Show PDF</button>
           </div>
+          <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
+            <GeneratePDF/>
+              <br/>
+              <button className="close-button" onClick={closeModal}>Close</button>
+              <button className="print" onClick={handlePrint}> Generate PDF</button>
+              <br/>
+          </Modal>
         </>
       )}
     </>

@@ -83,6 +83,7 @@ export const SingleText = () => {
           Analyze
         </button>
       </div>
+      <div class="line"></div>
       <div className='right-container'>
         <div className={`sentiment-image ${sentiment}`} />
         <br />

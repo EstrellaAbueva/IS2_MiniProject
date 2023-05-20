@@ -25,35 +25,35 @@ export const Menu = () => {
             <li>Fear</li>
             <li>Surprise</li>
           </ol>
-      </div>
-
-      <div>
+          
+        </div>
+      <div class="menu-line"></div>
+      <div className="content">
           <div>
             <h2 className="text-block">
               Single Text
             </h2>
 
             <p className="text-block">
-              This Menu allows users to enter text, and the system responds by displaying the associated emotion. 
-              Users input text, the system analyzes the emotional content using NLP techniques, and then 
-              presents the emotion through emojis, labels, or textual responses. It enhances communication 
-              experiences by providing users with feedback on their expressed emotions in various applications 
-              like social media or chatbots.
+            This menu enables users to input text and receive emotion-based feedback. 
+            It analyzes the emotional content using NLP techniques and presents the emotion through emojis, 
+            labels, or textual responses. It enhances communication by providing users with feedback on 
+            their expressed emotions in applications like social media or chatbots.
             </p>
           </div>
 
           <div>
             <h2 className="text-block">
-              Desctiption for File Text
+              File Text
             </h2>
 
             <p className="text-block">
-            This option allows users to upload a file, which is then analyzed for emotional content. The system 
-            generates a graphical representation of emotions, such as the number of instances of sadness, 
-            happiness, etc. Users can add remarks or comments, and the system can generate a PDF report 
-            summarizing the analysis and remarks for easy sharing or storage. It enables users to analyze 
-            emotions in uploaded files, visually represent emotional data, and create comprehensive reports 
-            in PDF format.
+              This feature allows users to upload a file for emotional analysis. 
+              The system generates a graphical representation of emotions found in 
+              the file, such as instances of sadness, happiness, etc. Users can add 
+              remarks or comments, and the system can generate a PDF report summarizing 
+              the analysis and remarks. This feature enables users to analyze emotions, 
+              visualize emotional data, and create shareable PDF reports.
             </p>
           </div>
         </div>

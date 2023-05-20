@@ -12,10 +12,11 @@ function TextInput({ label, inputValue, handleInputChange }) {
       label={label}
       multiline
       fullWidth
+      color="secondary"
       rows={10}
       value={inputValue}
       onChange={handleTextFieldChange}
-      sx={{ backgroundColor: '#ACB1D6' }} // Set the background color here
+      sx={{ backgroundColor: 'white' }} // Set the background color here
     />
   );
 }

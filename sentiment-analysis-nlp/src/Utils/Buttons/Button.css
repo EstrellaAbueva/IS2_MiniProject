@@ -4,7 +4,7 @@
     color: #fff;
     border-radius: 5px;
     padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
+    font-family: "Raleway", sans-serif;
     font-weight: 500;
     background: transparent;
     cursor: pointer;
@@ -23,11 +23,10 @@
     line-height: 42px;
     padding: 0;
     border: none;
-    background: rgb(255,27,0);
-    background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+    background: linear-gradient(0deg, #ce2f52 0%, #f2446b 100%);
   }
   .btn-5:hover {
-    color: #f0094a;
+    color: #e20a4a;
     background: transparent;
      box-shadow:none;
   }
@@ -39,7 +38,7 @@
     right:0;
     height:2px;
     width:0;
-    background: #f0094a;
+    background: #e20a4a;
     box-shadow:
      -1px -1px 5px 0px #fff,
      7px 7px 20px 0px #0003,
@@ -49,7 +48,6 @@
 
   .frame {
     width: 100%;
-    margin-bottom: 10%;
     text-align: center;
   }
 

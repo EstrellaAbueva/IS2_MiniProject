@@ -10,7 +10,7 @@
 .import {
     width: 400px;
     height: 50px;
-    background-color: #1E90FF;
+    background-color: #c64667;
     color: white;
     border: none;
     border-radius: 5px;
@@ -19,54 +19,100 @@
     text-align: center;
     display: flex;
     align-items: center;
+    font-weight: bold;
     justify-content: center;
 }  
 
 .analyze{
     width: 400px;
     height: 50px;
-    background-color: #1E90FF;
+    background-color: #3b447a;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .import:hover{
-    background-color: #3b6b9c;
-    font-weight: bold;
+    background-color: #944363;
+    font-weight: bolder;
     color: white;
 }
 
 .analyze:hover{
-    background-color: #3b6b9c;
-    font-weight: bold;
+    background-color: #222b5f;
+    font-weight: bolder;
     color: white;
 }
 
-.pdf{
-    width: 50%;
-    height: 60%;
-    background-color: #ff0000;
+.show{
+    width: 30%;
+    height: 50px;
+    background-color: #e20a4a;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    padding: 2%;
+    padding: 1%;
     align-content: center;
 }
 
-.pdf:hover{
-    background-color: #ff3333;
+.print{
+    width: 30%;
+    height: 50px;
+    background-color: #f73c6a;
     color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1%;
+    align-content: center;
+}
+
+.print:hover{
+    background-color: #e20a4a;
+}
+
+.close-button{
+    width: 30%;
+    height: 50px;
+    background-color: #464076;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1%;
+    align-content: center;
+}
+
+.close-button:hover{
+    background-color: #082369;
+}
+
+.remarks{
+    width: 650px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .remarks-area{
     width: 100%;
-    height:350px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -83,6 +129,11 @@
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 1%;
+}
+
+.remarks-content {
+    text-align: justify;
+    word-wrap: break-word;
 }
 
 .graphs-area{
@@ -130,7 +181,7 @@
 
 .no-data{
     width: 100%;
-    height: 300px;
+    height: 315px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,5 +214,29 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
+}
+
+.divider {
+    margin-top: 1%;
+    width: 5px;
+    height: 350px;
+    background-color: #dce4e4;
+    border-radius: 5px;
+}
+
+.modal{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-base{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
