@@ -66,7 +66,7 @@
 }
 
 .print{
-    width: 30%;
+    width: 20%;
     height: 50px;
     background-color: #f73c6a;
     color: white;
@@ -84,7 +84,7 @@
 }
 
 .close-button{
-    width: 30%;
+    width: 20%;
     height: 50px;
     background-color: #464076;
     color: white;
@@ -227,7 +227,7 @@
 }
 
 .modal{
-    width: 50%;
+    width: 41%;
     height: 50%;
     display: flex;
     flex-direction: column;

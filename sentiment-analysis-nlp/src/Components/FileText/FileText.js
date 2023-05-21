@@ -120,7 +120,7 @@ const FileText = () => {
       <div ref={componentRef} className='modal-base'>
         <div className='modal'>
           {showGraph ? (
-            <BarGraph data={results} width={500} height={300} ref={barGraphRef} />
+            <BarGraph data={results} width={200} height={100} ref={barGraphRef} />
           ) : (
             <span>Loading . . .</span>
           )}
