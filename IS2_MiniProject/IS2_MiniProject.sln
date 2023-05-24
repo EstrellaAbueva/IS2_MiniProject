@@ -4,8 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IS2_MiniProject", "IS2_MiniProject\IS2_MiniProject.csproj", "{191BB839-3505-45EF-801F-C8A34D82D9B8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{001289E7-5DF6-49D8-B676-CC78C1DF5D2B} = {001289E7-5DF6-49D8-B676-CC78C1DF5D2B}
+		{86C7CE73-B04B-46AA-97DC-36CD255E4351} = {86C7CE73-B04B-46AA-97DC-36CD255E4351}
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLModel1_ConsoleApp2", "MLModel1_ConsoleApp2\MLModel1_ConsoleApp2.csproj", "{76673E01-737E-4C58-A491-17C3B0ACA100}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentAnalysisNLP", "SentimentAnalysisNLP\SentimentAnalysisNLP.csproj", "{86C7CE73-B04B-46AA-97DC-36CD255E4351}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextEmotionAnalysis", "TextEmotionAnalysis\TextEmotionAnalysis.csproj", "{001289E7-5DF6-49D8-B676-CC78C1DF5D2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +23,14 @@ Global
 		{191BB839-3505-45EF-801F-C8A34D82D9B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{191BB839-3505-45EF-801F-C8A34D82D9B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{191BB839-3505-45EF-801F-C8A34D82D9B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76673E01-737E-4C58-A491-17C3B0ACA100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76673E01-737E-4C58-A491-17C3B0ACA100}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76673E01-737E-4C58-A491-17C3B0ACA100}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76673E01-737E-4C58-A491-17C3B0ACA100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86C7CE73-B04B-46AA-97DC-36CD255E4351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C7CE73-B04B-46AA-97DC-36CD255E4351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C7CE73-B04B-46AA-97DC-36CD255E4351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C7CE73-B04B-46AA-97DC-36CD255E4351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{001289E7-5DF6-49D8-B676-CC78C1DF5D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{001289E7-5DF6-49D8-B676-CC78C1DF5D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{001289E7-5DF6-49D8-B676-CC78C1DF5D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{001289E7-5DF6-49D8-B676-CC78C1DF5D2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
