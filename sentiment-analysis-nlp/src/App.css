@@ -1,0 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+.App {
+  text-align: center;
+}
+
+body {
+  display: flex;
+  background-color: #d3d3d9 ;
+  font-family: "Raleway", sans-serif;
+  justify-content: center;
+  align-items: top;
+  text-align: center;
+  height: 100%;
+}
+
+.parent-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  width: 1000px;
+  margin-top: 10%;
+  border-radius: 10px;
+  background: #FCFCFF;
+  box-shadow:  20px 20px 60px #d6d6d9,
+              -20px -20px 60px #ffffff;
+}
